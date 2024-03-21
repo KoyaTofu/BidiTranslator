@@ -1,7 +1,7 @@
 /****************************************************
  * ファイル名　：SharedFunction.ino
  * 役割　　　　：共用関数置き場
- * 作成日　　　：2024.**.**
+ * 作成日　　　：2024.03.05
  ***************************************************/
 /*** 利用ファイルのヘッダ ***/
  #include "Common.h"
@@ -44,6 +44,7 @@
  * 機能　　：malloc 管理
  * 引数　　：[CtlMalloc_t] ctl_malloc (操作内容 {eMAKE,eFREE})
  * 　　　　：[char**]      str_ptr    (操作対象文字列へのポインタ)
+ * 　　　　：[size_t]      str_size   (文字列サイズ)
  * 戻り値　：[bool]        frag       (正常処理完了 = true)
  * 備考　　：
  ***************************************************/
@@ -126,7 +127,7 @@
  * 　　　　：[int]      dst_index   (コピー開始位置)
  * 　　　　：[CmpMap_t] convert_map (コピー対象の変換マップ識別記号 {eROMAN, eTRANS_JAP, eTRANS_ENG, eEST})
  * 　　　　：[int]      map_index   (変換マップ中の要素番号)
- * 戻り値　：なし(裏側で反映される)
+ * 戻り値　：なし(ポインタで dst_str を上書き反映)
  * 備考　　：strcpy と 各種変換 map の合体
  ***************************************************/
  void cpyMap( char** dst_str, int dst_index, ConvertMap_t convert_map, int map_index)
@@ -178,7 +179,7 @@
  * 　　　　：[char*] src         (コピー元文字列のポインタ)
  * 　　　　：[int]   dst_size    (コピー先文字列のメモリサイズ)
  * 　　　　：[int]   first_index (コピー開始位置,0 ~ )
- * 戻り値　：なし
+ * 戻り値　：なし(ポインタで dst を上書き反映)
  * 備考　　：arduino では MS の strcpy_s が使えないから自作
  ***************************************************/
  void strcpy_sf(char* dst, char* src, size_t dst_size, int first_index)

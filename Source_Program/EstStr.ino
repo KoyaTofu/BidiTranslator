@@ -1,7 +1,7 @@
 /****************************************************
  * ファイル名　：EstStr.ino
  * 役割　　　　：入力文字列の予測
- * 作成日　　　：2024.**.**
+ * 作成日　　　：2024.03.05
  ***************************************************/
  /*** 利用ファイルのヘッダ ***/
  #include "Common.h"
@@ -21,7 +21,7 @@ extern char trans_eng[TRANS_NUM][2][TRANS_ENG_LEN];
  * 関数名　：estStr
  * 機能　　：入力文字列の予測
  * 引数　　：[char**] est_ptr, [char**] input_ptr, [LangMode_t] lang_mode
- * 戻り値　：なし(裏側で反映される)
+ * 戻り値　：なし(ポインタで est_ptr を上書き反映)
  * 備考　　：
  ***************************************************/
  void estStr( char** est_ptr, char** input_ptr, LangMode_t lang_mode )

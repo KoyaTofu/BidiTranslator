@@ -1,7 +1,7 @@
 /****************************************************
  * ファイル名　：ManageTrans.ino
  * 役割　　　　：双方向翻訳
- * 作成日　　　：2024.**.**
+ * 作成日　　　：2024.03.05
  ***************************************************/
 
  /*** 利用ファイルのヘッダ ***/
@@ -19,8 +19,8 @@ const char* const trans_map[TRANS_NUM][2] PROGMEM;
 /****************************************************
  * 関数名　：translation
  * 機能　　：翻訳
- * 引数　　：[char**] input_ptr, [LangMode_t] lang_mode
- * 戻り値　：[char*] input_ptr
+ * 引数　　：[char**] trans_ptr, [char**] input_ptr, [LangMode_t] lang_mode
+ * 戻り値　：なし(ポインタで trans_ptr を上書き反映)
  * 備考　　：
  ***************************************************/
 void translation(char** trans_ptr, char** input_ptr, LangMode_t lang_mode)

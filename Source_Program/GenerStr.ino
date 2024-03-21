@@ -1,7 +1,7 @@
 /****************************************************
  * ファイル名　：GenrStr.ino
  * 役割　　　　：文字列生成
- * 作成日　　　：2024.**.**
+ * 作成日　　　：2024.03.05
  ***************************************************/
 /*** 利用ファイルのヘッダ ***/
  #include "Common.h"
@@ -21,7 +21,7 @@
  * 関数名　：genrStr
  * 機能　　：ascii をもとに文字列の生成
  * 引数　　：[char**] input_ptr, [char] ascii, [LangMode_t] lang_mode
- * 戻り値　：なし(裏側で反映される)
+ * 戻り値　：なし(ポインタで input_ptr を上書き反映)
  * 備考　　：
  ***************************************************/
 void generStr(char** input_ptr, char ascii, LangMode_t lang_mode)
@@ -47,7 +47,7 @@ void generStr(char** input_ptr, char ascii, LangMode_t lang_mode)
  * 関数名　：cnvtRoman
  * 機能　　：input_ptr をもとにローマ字変換
  * 引数　　：[char**] input_ptr
- * 戻り値　：なし(裏側で反映される)
+ * 戻り値　：なし(ポインタで input_ptr を上書き反映)
  * 備考　　：
  ***************************************************/
 void cnvtRoman(char** input_ptr)
